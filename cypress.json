@@ -1,0 +1,6 @@
+{
+    "env": {
+        "RETRIES": 5
+    },
+    "video": false
+}
