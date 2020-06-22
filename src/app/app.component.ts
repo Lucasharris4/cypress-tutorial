@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   startShow() {
-    this.router.navigateByUrl("/slideshow");
+    this.router.navigateByUrl("/slideshow?slide=1");
     this.home = false;
   }
 
