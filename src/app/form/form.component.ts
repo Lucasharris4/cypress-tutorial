@@ -9,13 +9,19 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   myForm: FormGroup;
+  message: string = '';
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
       firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      framework: new FormControl('')
     })
+  }
+  submit() {
+    this.message = "Submitted, thanks for your input!"
   }
 
 }

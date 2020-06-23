@@ -4,6 +4,26 @@ describe('first test', () => {
     });
 
     it("should enter stuff into firstName box", () => {
-        cy.get('#firstNameBox').type("testing 123");
-    })
+        cy.get('#firstNameBox').type("Bruce");
+    });
+
+    it("should enter stuff into lastName box", () => {
+        cy.get('#lastNameBox').type("Wayne");
+    });
+
+    it("should select angular in the radio buttons", () => {
+        cy.get(["formControlName"]="framework").click('have.value', 'angular');
+    });
 });
+
+describe('second test', () => {
+    before('', () => {
+        cy.visit('/form');
+    });
+
+    it("should display a message after submit", () => {
+        cy.get('.message').should('be.empty');
+        cy.get('button').contains('submit').click();
+        cy.get('.message').should('have.value', 'Submitted, thanks for your input!');
+    });
+})
