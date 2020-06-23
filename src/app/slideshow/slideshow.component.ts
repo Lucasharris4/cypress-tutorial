@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-slideshow',
@@ -10,7 +10,7 @@ export class SlideshowComponent implements OnInit {
   header: string = "$ npm install cypress"
   slide: number = 1
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -29,6 +29,12 @@ export class SlideshowComponent implements OnInit {
     } else {
       this.slide = 1
     }
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {slide: this.slide},
+      queryParamsHandling: "merge"
+    });
   }
 
 
