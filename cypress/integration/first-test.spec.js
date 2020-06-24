@@ -12,7 +12,8 @@ describe('first test', () => {
     });
 
     it("should select angular in the radio buttons", () => {
-        cy.get(["formControlName"]="framework").click('have.value', 'angular');
+        cy.get("input[formControlName=framework][value=react]").click();
+        cy.pause();
     });
 });
 
@@ -23,7 +24,7 @@ describe('second test', () => {
 
     it("should display a message after submit", () => {
         cy.get('.message').should('be.empty');
-        cy.get('button').contains('submit').click();
-        cy.get('.message').should('have.value', 'Submitted, thanks for your input!');
+        cy.get('button').contains('Submit').click();
+        cy.get('.message').should('have.contain', 'Submitted, thanks for your input!');
     });
 })

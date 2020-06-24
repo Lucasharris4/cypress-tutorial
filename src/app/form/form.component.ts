@@ -19,6 +19,7 @@ export class FormComponent implements OnInit {
       lastName: new FormControl(''),
       framework: new FormControl('')
     })
+    this.myForm.controls.framework.setValue("angular");
   }
   submit() {
     this.message = "Submitted, thanks for your input!"

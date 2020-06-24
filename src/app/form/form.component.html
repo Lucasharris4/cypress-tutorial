@@ -8,13 +8,14 @@
     <label for="lastName">Last Name:</label>
     <input id="lastNameBox" class="font-color-black" type="text" formControlName="lastName">
   </div>
+  <div class="center padding-12">
+    <input formControlName="framework" type="radio" name="framework" value="angular">
+    <label for="angular">Angular</label><br>
+    <input formControlName="framework" type="radio" name="framework" value="react">
+    <label for="react">React</label>
+  </div>
 </form>
-<div class="center padding-12">
-  <input formControlName="framework" type="radio" name="framework" value="angular">
-  <label for="angular">Angular</label><br>
-  <input formControlName="framework" type="radio" name="framework" value="react">
-  <label for="react">React</label>
-</div>
+
 <div class="padding-12 center">
   <button class="font-color-black" (click)="submit()">Submit</button>
   <span class="message">{{ message }}</span>
